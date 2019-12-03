@@ -1,5 +1,4 @@
 const dinos = require('./dinos.js');
-
 // Some helpful hints as to the general strategy for making the map and filter functions below:
 
 // Filter function:
@@ -88,30 +87,87 @@ const isCretaceous = function(dinosaur) {
 }
 
 const singularizeDinos = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    newArr.push(makeSingular(dino))
+  }
+  return newArr
 }
 
 const truncateDinos = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    newArr.push(truncateSpecies(dino))
+  }
+  return newArr
 }
 
 const makeAllExtinct = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    newArr.push(makeExtinct(dino))
+  }
+  return newArr
 }
 
 const carnivoresOnly = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    if(isCarnivore(dino)){
+      newArr.push(dino)
+    }
+  }
+  return newArr
 }
 
 const herbivoresOnly = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    if(!isCarnivore(dino)){
+      newArr.push(dino)
+    }
+  }
+  return newArr
 }
 
 const extinctOnly = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    if(isExtinct(dino)){
+      newArr.push(dino)
+    }
+  }
+  return newArr
 }
 
 const notExtinct = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    if(!isExtinct(dino)){
+      newArr.push(dino)
+    }
+  }
+  return newArr
 }
 
 const triassicOnly = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    if(isTriassic(dino)){
+      newArr.push(dino)
+    }
+  }
+  return newArr
 }
 
 const notTriassic = function(dinos) {
+  const newArr = []
+  for(const dino of dinos){
+    if(!isTriassic(dino)){
+      newArr.push(dino)
+    }
+  }
+  return newArr
 }
 
 
